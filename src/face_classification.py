@@ -18,6 +18,7 @@ def detect(image, model):
 
     #顔検出器の準備
     classifier = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+    #cascade = cv2.CascadeClassifier("lbpcascade_animeface.xml")
     #画像をグレースケール化
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     #画像の中から顔を検出
@@ -46,7 +47,6 @@ def detect(image, model):
     return image
 
 
-#ラベルから対応するウマ娘の名前を返す関数
 def label_to_name(name_label):
 
     if name_label == 0:

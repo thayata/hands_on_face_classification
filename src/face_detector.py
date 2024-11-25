@@ -27,9 +27,11 @@ def main(in_dir,out_dir):
                 print("Not open:")
                 continue
             image_gs=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-            #cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml") 
-            cascade=cv2.CascadeClassifier("haarcascade_frontalface_alt.xml") 
-            face_list=cascade.detectMultiScale(image_gs, scaleFactor=1.1, minNeighbors=2,minSize=(64,64))
+            #イラストの場合は下のcascadeを使う
+            #cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
+            cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+            #cascade = cv2.CascadeClassifier("lbpcascade_animeface.xml")
+            face_list=cascade.detectMultiScale(image_gs, scaleFactor=1.01, minNeighbors=2,minSize=(8,8))
 
             count=0
             if len(face_list)>0:

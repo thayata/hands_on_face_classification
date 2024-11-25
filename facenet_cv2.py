@@ -29,7 +29,10 @@ def detect(image,dict):
     #img_cv2 = cv2.imread(image)
 
     #顔検出器の準備
+    #イラストの場合は下のclassifierを使う
     classifier = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+    #classifier = cv2.CascadeClassifier("lbpcascade_animeface.xml")
+
     #画像をグレースケール化
     gray_image = cv2.cvtColor(img_cv2, cv2.COLOR_BGR2GRAY)
     #画像の中から顔を検出
@@ -62,6 +65,7 @@ def label_to_name(feature_vector,dict):
             name_label = i
             break
 
+    #### face_dictに用意した番号順に正解を記入
     if name_label == 0:
         name = "Tomita Suzuka"
     elif name_label == 1:

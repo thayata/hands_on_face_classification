@@ -26,6 +26,7 @@ class Mydataset(torch.utils.data.Dataset):
                 #print(IMAGE_PATH)
                 self.data.append(cv2.imread(IMAGE_PATH))
                 #ラベルは、富田:0,金村:1,松田:2,丹生:3,河田:4
+                #print(member_dir)の順番をチェック
                 self.targets.append(member)
                 if type(self.data[num]) == type(None):
                     print(IMAGE_PATH)

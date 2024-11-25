@@ -115,7 +115,7 @@ def main(epo,rate,num,train_dir,test_dir):
     if (args.save_model):
         #gpuで学習したモデルをgpuで使う
         torch.save(model.state_dict(),"hinatazaka_cnn.pt")#args.save_modelがTrueなら最適化されたモデルを保存
-        #gpuで学習したモデルをcpuで使うs
+        #gpuで学習したモデルをcpuで使う
         torch.save(model.to('cpu').state_dict(),"hinatazaka_cnn_cpu.pt")
 
 if __name__ == '__main__':
