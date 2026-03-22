@@ -28,10 +28,16 @@ def main(in_dir,out_dir):
                 continue
             image_gs=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
             #イラストの場合は下のcascadeを使う
+<<<<<<< HEAD
             #cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
             cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
             #cascade = cv2.CascadeClassifier("lbpcascade_animeface.xml")
             face_list=cascade.detectMultiScale(image_gs, scaleFactor=1.01, minNeighbors=2,minSize=(8,8))
+=======
+            cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+            #cascade = cv2.CascadeClassifier("lbpcascade_animeface.xml")
+            face_list=cascade.detectMultiScale(image_gs, scaleFactor=1.1, minNeighbors=2,minSize=(64,64))
+>>>>>>> a070e5e (update_for_2026)
 
             count=0
             if len(face_list)>0:

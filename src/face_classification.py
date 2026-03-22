@@ -47,6 +47,10 @@ def detect(image, model):
     return image
 
 
+<<<<<<< HEAD
+=======
+#ラベルから対応する名前を返す関数
+>>>>>>> a070e5e (update_for_2026)
 def label_to_name(name_label):
 
     if name_label == 0:
@@ -92,7 +96,7 @@ def main(num):
         image = np.array(Image.open(image))
         detect_image = detect(image, model)
         #顔検出を行った結果を表示
-        st.image(detect_image, use_column_width=True)
+        st.image(detect_image, use_container_width=True)
 
 if __name__ == "__main__":
     main()

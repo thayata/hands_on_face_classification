@@ -47,6 +47,7 @@ def detect(image,dict):
             if face is None: pass
             else:
                 feature_vector = resnet(face.unsqueeze(0)).squeeze().detach().numpy().copy()
+                print(feature_vector)
                 name = label_to_name(feature_vector,dict)
                 cv2.rectangle(img_cv2, (x,y), (x+width,y+height), (255, 0, 0), thickness=3) #四角形描画
                 cv2.putText(img_cv2, name,(x,y+height+20), cv2.FONT_HERSHEY_DUPLEX, 1, (255,0,0),2) #人物名記述
@@ -110,7 +111,7 @@ def main(in_dir):
         #画像の読み込み
         detect_image = detect(image, features)
         #顔検出を行った結果を表示
-        st.image(detect_image, use_column_width=True)
+        st.image(detect_image, use_container_width=True)
 
 if __name__ == "__main__":
     main('./face_dict/*.jpg')

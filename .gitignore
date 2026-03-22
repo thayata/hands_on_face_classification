@@ -1,5 +1,12 @@
 /data/*
+<<<<<<< HEAD
 /__data/*
 /face_data/*
 /train_data/*
 /test_data/*
+=======
+/face_data/*
+/train_data/*
+/test_data/*
+/to_takayama/*
+>>>>>>> a070e5e (update_for_2026)
