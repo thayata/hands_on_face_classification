@@ -6,5 +6,8 @@
 /bck/data/*
 /bck/__data/*
 /bck/face_data/*
+/bck/face_dict/*
+/bck/face_test/*
 /bck/train_data/*
 /bck/test_data/*
+.DS_Store
